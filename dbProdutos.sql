@@ -50,3 +50,32 @@ select * from PRODUTOS where NOME = 'MONITOR' and TIPO = 'INFORMATICA';
 select * from PRODUTOS where NOME = 'MONITOR' or TIPO = 'INFORMATICA';
 
 select * from PRODUTOS where TIPO in('INFORMATICA', 'TELEFONE');
+
+select * from PRODUTOS where valor between 250 and 400;
+
+select * from PRODUTOS where valor not between 250 and 400;
+
+select * from PRODUTOS where CODIGO = 5;
+
+-- pesquisa por nome
+
+select * from PRODUTOS where nome like '%o';
+
+select * from PRODUTOS where nome like 'i%';
+
+select * from PRODUTOS where nome like '%a%';
+
+select * from PRODUTOS where nome like '%a%' and TIPO = 'INFORMATICA';
+
+select * from PRODUTOS where nome like '%a%' or TIPO = 'INFORMATICA';
+
+-- Somar a um dos valores
+
+select valor * 1.12 as 'Valor' from produtos where nome like 'F%';
+
+update produtos set valor = valor * 1.12 
+	where nome like 'f%';
+
+select nome, valor from produtos 
+	where nome like 'f%';
+
